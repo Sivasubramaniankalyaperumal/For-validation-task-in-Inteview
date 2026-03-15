@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            color: rgb(19, 108, 180);
+        }
+        .cont{
+            background:rgb(19, 108, 180);
+            height: 600px;
+            width: 80%;
+            display: flex;
+
+
+        }
+        .c1{
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:  15px;
+        }
+        .c2{
+            height: 100%;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .c2>p{
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .c2>summary{
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        form{
+            width:100%;
+            height:100%;
+            background: rgb(214, 228, 233);
+            padding:20px;
+            
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            overflow:auto;
+        }
+        form input,
+        form select,
+        form textarea{
+            width:90%;
+            padding:6px;
+            margin-bottom:8px;
+        }
+             
+        
+       @media (max-width:600px) {
+        form{
+            background-color: rgb(0, 242, 255);
+            display: flex;
+            flex-wrap: wrap;
+            height: 600px;
+            width: 150%;
+            border: 10px solid black;
+            border-radius: 20px;
+            padding: 10px;
+            gap: 10px;
+        }
+        .c1{
+            width: 600px;
+        }
+        .c2{
+            position: absolute;
+        }
+
+       }
+       
+       #succesmsg{
+        color: rgb(52, 196, 52);
+        font-weight: bold;
+       }
+       .er{
+        color: red;
+        font-weight: bold;
+        
+       }
+       .er-border{
+            border:2px solid red;
+         }
+
+       input[type=submit]:hover{
+        color: rgb(229, 207, 207);
+        background-color: rgb(14, 0, 53);
+       }
+       input[type=submit],input[type=reset]{
+        background-color: rgb(19, 108, 180);
+       }
+
+       input:focus,textarea:focus{
+        color: blue;
+        background: lightgoldenrodyellow;
+       }
+
+       
+       .dark{
+        background-color: black;
+
+       }
+       .darkBox{
+        background:rgb(113, 39, 233);
+        }
+        .darkc1{
+            background-color: black;
+            
+        }
+        .tg{
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+       
+       .p{
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 30px;
+        
+        text-align: justify;
+        
+        height: 100px;
+        width: 100%;
+       }
+       </style>
+</head>
+<body>
+    <p style="color: red;"  class="p">This project is a responsive User Registration and Feedback Form using HTML, CSS, and JavaScript. It validates user inputs and shows error messages with red borders, which disappear when corrected. After successful submission, a success message and submitted data summary appear without page refresh. It also includes responsive design and a light/dark theme toggle.</p>
+    <div class="cont">
+        <div class="c1">
+            <form action="">
+                <label for="name">FullName</label>
+                <input type="text" name="name" id="name">
+                <div class="er" id="errName"></div><br>
+                
+                <label for="mail">EmailAddress</label>
+                <input type="email" name="email" id="mail">
+                <div class="er" id="errMail"></div><br>
+                
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass">
+                <div class="er" id="errPass"></div><br>
+                
+                <label for="cpass">Confirm Password</label>
+                <input type="password" name="re-password" id="cpass">
+                <div class="er" id="errCPass"></div><br>
+                
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age">
+                <div class="er" id="errAge"></div><br>
+                
+                <label for=""><h3>Gender</h3></label>
+                <label for="gender">male</label>
+                <input type="radio" name="gender" id="gender" value="male">
+                <label for="gender2">female </label>
+                <input type="radio" name="gender" id="gender2" value="female">
+                <label for="gender3">others</label>
+                <input type="radio" name="gender" id="gender3" value="others">
+                <div class="er" id="errGender"></div><br>
+                
+                <label for=""><h3>Skills</h3></label>
+                <label for="skill1">HTML</label>
+                <input type="checkbox" name="skill" id="skill1" value="html">
+                <label for="skill2">CSS</label>
+                <input type="checkbox" name="skill" id="skill2" value="css">
+                <label for="skill3">JavaScript</label>
+                <input type="checkbox" name="skill" id="skill3" value="javascript">
+                <div class="er" id="errSkill"></div><br>
+                
+                <label for="con">Country</label>
+                <select name="contry" id="con">
+                    <option value="india">india</option>
+                    <option value="china">china</option>
+                    <option value="russia">russia</option>
+                </select>
+                <br>
+                <br>
+                
+                <label for="fb">FeedBack</label>
+                <textarea name="Feedback" id="fb"></textarea>
+                <br>
+                <br>
+                
+                <label for="terms">Terms & Conditions</label>
+                <input type="checkbox" name="Terms&Condition" id="terms" value="agree">
+                <div class="er" id="errTerms"></div>
+                <br>
+                <br>
+                
+                <input type="submit" name="" id="submit"><br>
+                <input type="reset" name="" id="reset"><br>
+                
+            </form>
+        </div>
+        <div class="c2">
+            <p id="succesmsg">SUBMIT STATUS</p>
+            <br>
+            <summary id="summary" style="color: white;">SUBMITTED DATA</summary>
+            <br>
+            <button class="tg">Toggle</button>
+        </div>
+    </div>
+</body>
+<script>
+document.querySelector("form").addEventListener("submit", (e)=>{
+  
+    e.preventDefault();
+
+    let valid=true
+
+    let name=document.getElementById("name").value;
+    if(name.length<3){
+        document.getElementById("name").classList.add("er-border");
+        document.getElementById("errName").innerText="Enter more than 3 letters";
+        valid=false;
+    }else{
+        document.getElementById("errName").innerText="";
+        document.getElementById("name").classList.remove("er-border");
+    }
+
+    let email=document.getElementById("mail").value;
+    let mailPattern=/^\S+@\S+\.\S+$/;
+    if(!mailPattern.test(email)){
+        document.getElementById("mail").classList.add("er-border");
+        document.getElementById("errMail").innerText="pattern should be in email format";
+        valid=false;
+    }else{
+        document.getElementById("mail").classList.remove("er-border");
+        document.getElementById("errMail").innerText="";
+    }
+
+
+    let password=document.getElementById("pass").value;
+    let passPattern=/^(?=.*[A-Z])(?=.*\d).{8,}$/; 
+    if(!passPattern.test(password)){
+        document.getElementById("pass").classList.add("er-border");
+        document.getElementById("errPass").innerText="pattern must comtain 1 number 1 uppercase"
+        valid=false;
+    }else{
+        document.getElementById("pass").classList.remove("er-border");
+        document.getElementById("errPass").innerText="";
+    }
+
+    let cpassword=document.getElementById("cpass").value;
+    if(password!==cpassword){
+        document.getElementById("errCPass").innerText="give same password os given";
+        valid=false;
+            document.getElementById("cpass").classList.add("er-border");
+    }
+    else{
+        document.getElementById("errCPass").innerText="";
+            document.getElementById("cpass").classList.remove("er-border");
+    }
+
+    let age=document.getElementById("age").value;
+    if(age<18 || age>60 ){
+        document.getElementById("errAge").innerText="sorry you must be in 19 - 59";
+        valid=false;
+            document.getElementById("age").classList.add("er-border");
+    }
+    else{
+        document.getElementById("errAge").innerText="";
+            document.getElementById("age").classList.remove("er-border");
+    }
+
+    let gender=document.querySelectorAll("input[name='gender']:checked");
+    if(gender.length==0){
+        document.getElementById("errGender").innerText="click gender"
+        valid=false;
+    }else{
+         document.getElementById("errGender").innerText="";
+    }
+
+    let skill=document.querySelectorAll("input[name='skill']:checked");
+    if(skill.length==0){
+        document.getElementById("errSkill").innerText="click Skills"
+        valid=false;
+    }else{
+         document.getElementById("errSkill").innerText="";
+    }
+
+    let Terms=document.getElementById("terms").checked;
+    if(!Terms){
+        document.getElementById("errTerms").innerText="must accept Terms & Conditions"
+        valid=false;
+    }else{
+        document.getElementById("errTerms").innerText=""
+    }
+
+
+    if(valid){
+        document.getElementById("succesmsg").innerHTML="<h1>Form Sumbitted Successfully.</h1>"
+        showSummery()
+    }
+})
+
+function showSummery(){
+
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("mail").value;
+    let age=document.getElementById("age").value;
+    // let skills=document.getElementById("skills").value
+
+    document.getElementById("summary").innerHTML= `<h3>Submitted Data</h3>
+                                                    Name : ${name}<br>
+                                                    Mail Address : ${email}<br>
+                                                    Age : ${age}<br>`;
+}
+
+// document.querySelector("body").addEventListener("click", ()=>{
+//     document.querySelector("body").style.backgroundColor="black"
+//     document.querySelector(".cont").style.backgroundColor="gray"
+// })
+    document.querySelector(".tg").addEventListener("click", () => {
+        document.querySelector("body").classList.toggle("dark");
+        document.querySelector(".cont").classList.toggle("darkBox");
+        document.querySelector("form").classList.toggle("darkc1")
+    });
+
+
+</script>
+</html>
